@@ -1,0 +1,70 @@
+/* UTILITIES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cabin', sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+/* /UTILITIES */
+
+/* background */
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, #000044, #001d52, #002c52, #00394b, #004545);
+}
+
+/* /background */
+
+/* card */
+.card {
+  width: calc(100% / 4 - 40px);
+  margin: 20px 20px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);
+  transition: all 2s;
+}
+
+.content > img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.content {
+  position: relative;
+}
+
+.overlay {
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.card:hover .overlay {
+  display: flex;
+}
+
+.year {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.genre {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
