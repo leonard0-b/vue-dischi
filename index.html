@@ -10,15 +10,30 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root" class="flex">
-    <div class="card flex" v-for="album in albums">
-      <div class="content text-center">
-        <img :src="album.poster" alt="album-cover">
-        <div class="overlay flex">
-          <p class="artist"> {{album.author}} </p>
-          <p class="title"> {{album.title}} </p>
-          <p class="year"> {{album.year}} </p>
-          <p class="genre"> {{ album.genre}} </p>
+  <div id="root">
+    <header>
+      <h1 class="text-center">La tua Musica</h1>
+      <div class="music-select flex">
+        <label for="genres">Cosa ti va di ascoltare: </label>
+        <select v-model="selected">
+          <option value="">All</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Pop">Pop</option>
+          <option value="Rock">Rock</option>
+          <option value="Metal">Metal</option>
+        </select>
+      </div>
+    </header>
+    <div class="card-container flex">
+      <div class="card flex" v-for="album in albums" v-if="(selected == album.genre) ? true : selected == ''">
+        <div class="content text-center">
+          <img :src="album.poster" alt="album-cover">
+          <div class="overlay flex">
+            <p class="artist fs20"> {{album.author}} </p>
+            <p class="title fs15"> {{album.title}} </p>
+            <p class="year fs13"> {{album.year}} </p>
+            <p class="genre fs13"> {{album.genre}} </p>
+          </div>
         </div>
       </div>
     </div>
