@@ -2,7 +2,8 @@ var app = new Vue({
   el: '#root',
   data: {
     albums: [],
-    selected: ""
+    selected: "",
+    inputSearch: "",
   },
   mounted() {
     this.getAlbums();
