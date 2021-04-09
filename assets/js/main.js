@@ -12,7 +12,10 @@ var app = new Vue({
       axios.get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((response) => {
           console.log(response.data.response);
-          this.albums = response.data.response
+          this.albums = response.data.response;
+          // ordinare array in ordine crescente in base all'uscita
+          this.albums.sort((a, b) => (a.year > b.year) ? 1 : -1);
+
           console.log(this.albums);
         })
       },

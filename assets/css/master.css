@@ -34,11 +34,11 @@ h1 {
 
 /* background */
 body {
+  background: #8360c3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
-  height: 100vh;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(to right bottom, #000044, #001d52, #002c52, #00394b, #004545);
 }
 
 .card-container {
@@ -113,4 +113,16 @@ body {
 label {
   color: #fff;
   padding-right: 10px;
+}
+
+select {
+  color: #2fbf92;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #2fbf92;
+  background-color: inherit;
+}
+
+option {
+  background-color: #6d79b6;
 }
