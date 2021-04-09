@@ -15,7 +15,7 @@ var app = new Vue({
           console.log(response.data.response);
           this.albums = response.data.response;
           // ordinare array in ordine crescente in base all'uscita
-          this.albums.sort((a, b) => (a.year > b.year) ? 1 : -1);
+          this.albums.sort((a, b) => (a.year - b.year));
 
           console.log(this.albums);
         })

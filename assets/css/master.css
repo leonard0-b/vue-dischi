@@ -41,6 +41,10 @@ body {
   background-size: cover;
 }
 
+header {
+  margin-bottom: 50px;
+}
+
 .card-container {
   flex-wrap: wrap;
   width: 70%;
@@ -156,4 +160,24 @@ button {
   background-color: #fff;
   padding: 5px 10px;
   border-radius: 10px;
+}
+
+@media all and (max-width: 768px) {
+  .card {
+    width: calc(100% / 2 - 40px);
+  }
+}
+
+@media all and (max-width: 576px) {
+  .card {
+    width: calc(100% - 40px);
+  }
+
+  .music-select {
+    flex-direction: column;
+  }
+
+  select {
+    margin: 15px 0;
+  }
 }
