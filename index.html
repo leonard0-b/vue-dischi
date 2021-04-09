@@ -12,13 +12,13 @@
 <body>
   <div id="root" class="flex">
     <div class="card flex" v-for="album in albums">
-      <div class="content">
-        <img src="https://m.media-amazon.com/images/I/71K9CbNZPsL._SS500_.jpg" alt="album-cover">
+      <div class="content text-center">
+        <img :src="album.poster" alt="album-cover">
         <div class="overlay flex">
-          <p class="artist">Michael Jackson</p>
-          <p class="title">Bad</p>
-          <p class="year">1987</p>
-          <p class="genre">Pop</p>
+          <p class="artist"> {{album.author}} </p>
+          <p class="title"> {{album.title}} </p>
+          <p class="year"> {{album.year}} </p>
+          <p class="genre"> {{ album.genre}} </p>
         </div>
       </div>
     </div>
