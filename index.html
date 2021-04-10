@@ -19,10 +19,7 @@
         <label for="genres">Cosa ti va di ascoltare: </label>
         <select v-model="selected">
           <option value="">All</option>
-          <option value="Jazz">Jazz</option>
-          <option value="Pop">Pop</option>
-          <option value="Rock">Rock</option>
-          <option value="Metal">Metal</option>
+          <option v-for="genere in genres" :value="genres">{{genere}}</option>
         </select>
         <div class="search">
           <input class="search-input" v-model="inputSearch" type="text" name="" placeholder="Cerca artista...">
