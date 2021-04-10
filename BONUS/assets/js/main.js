@@ -3,7 +3,7 @@ var app = new Vue({
   data: {
     albums: [],
     genres: [],
-    selected: "All",
+    selected: "",
     inputSearch: "",
   },
   mounted() {

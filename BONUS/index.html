@@ -18,11 +18,8 @@
       <div class="music-select flex">
         <label for="genres">Cosa ti va di ascoltare: </label>
         <select v-model="selected">
-          <option value="All">All</option>
-          <!-- con un v-for ciclo tutte le option in base all'array dei generi
-          il value dovrà prendere il nome dal'oggetto dell'array corrispondente
-          ad esempio in questo caso in albums ci interessa il .genre quindi value sarà genre per poterli comparare -->
-          <option v-for="genre in genres" :value="genre">{{genre}}</option>
+          <option value="">All</option>
+          <option v-for="genere in genres" :value="genres">{{genere}}</option>
         </select>
         <div class="search">
           <input class="search-input" v-model="inputSearch" type="text" name="" placeholder="Cerca artista...">
@@ -31,8 +28,7 @@
       </div>
     </header>
     <div class="card-container flex">
-      <!-- nel v-if scelgo di visualizzare gli album se il genere selezionato è uguale al .genre dell'array principale o se seleziono 'All' - la seconda parte è per fare la ricerca nome artista -->
-      <div class="card flex" v-for="album in albums" v-if="(album.genre == selected) || (selected == 'All') && album.author.toLowerCase().includes(inputSearch.toLowerCase())">
+      <div class="card flex" v-for="album in albums" v-if="((selected == album.genre) ? true : selected == '') && album.author.toLowerCase().includes(inputSearch.toLowerCase())">
         <div class="content text-center">
           <img :src="album.poster" alt="album-cover">
           <div class="overlay flex">
